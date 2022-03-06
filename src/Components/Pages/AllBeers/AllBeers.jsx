@@ -1,11 +1,21 @@
 import axios from 'axios';
+import "./AllBeers.css"
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Header from '../../Header/Header';
+//import Searchbar from '../../SearchBar/SearchBar';
 
 function AllBeers() {
 
     const [getBeers, setGetBeers] = useState([]);
+
+    //const [displayBeer, setDisplayBeer] = useState()
+   
+
+    // const searchFilter = (searchQuery) => {
+    //   axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${search}`);
+    //   const filteredBeer = 
+    // }
 
     useEffect(() => {
       axios
@@ -23,13 +33,21 @@ function AllBeers() {
       <Header></Header>
       {getBeers.map((beer) => {
         return (
-          <div key={beer._id}>
-            <Link className='links' to={`/${beer._id}`}>
-              <img src={beer.image_url} alt="beer img" />
-              <h3>{beer.name}</h3>
-              <p>{beer.tagline}</p>
-              <h5> Created By: {beer.contributed_by}</h5>
-            </Link>
+          <div className='box'>
+            <div className='allBeers' key={beer._id}>
+              {/* <Searchbar search = {searchFilter} /> */}
+              <Link className = 'links' to = {`/${beer._id}`}>
+                <div>
+                  <img src={beer.image_url} alt="beer img" />
+                </div>
+                <div>
+                  <h3>{beer.name}</h3>
+                  <p>{beer.tagline}</p>
+                  <h5> Created By: {beer.contributed_by}</h5>
+                </div>
+                
+              </Link>
+            </div>
           </div>
         );
       })}

@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./BeersPage.css"
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../Header/Header";
@@ -21,14 +22,16 @@ function BeersPage() {
   return (
     <>
       <Header></Header>
-      <div>
-        <img src={getBeer.image_url} alt={getBeer.name} />
-        <h2>{getBeer.name}</h2>
-        <h4>{getBeer.tagline}</h4>
-        <h6>{getBeer.first_brewed}</h6>
-        <h6>{getBeer.attenuation_level}</h6>
-        <p>{getBeer.description}</p>
-        <h3>{getBeer.contributed_by}</h3>
+      <div className="box">
+        <div className="singleBeer">
+          <img src={getBeer.image_url} alt={getBeer.name} />
+          <h2>{getBeer.name}</h2>
+          <h4>{getBeer.tagline}</h4>
+          <h6>{getBeer.first_brewed}</h6>
+          <h6>{getBeer.attenuation_level}</h6>
+          <p>{getBeer.description}</p>
+          <h3>{getBeer.contributed_by}</h3>
+        </div>
       </div>
     </>
   );

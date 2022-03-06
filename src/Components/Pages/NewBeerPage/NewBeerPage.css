@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-direction: column;
+    min-width: 30vw;
+}
+ 
+form  input{
+    border-radius: 50px;
+    height: 4vh;
+    border: 0.5px solid grey;
+}
+
+form label{
+    margin-top: 2vh;
+    font-weight: bold;
+    align-self: start;
+    padding-left: 1vw;
+}
+
+form button {
+    border-radius: 50px;
+    height: 5vh;
+    background-color: rgb(96, 191, 255);
+    color: white;
+    margin-top: 3vh;
+    border-color: transparent;
+}
+
+textarea {
+    border-radius: 20px;
+    
+}
